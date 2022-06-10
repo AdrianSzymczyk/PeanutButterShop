@@ -1,15 +1,5 @@
 const products = [
   {
-    name: "M&M's Peanut Butter ",
-    image: "/images/butter6.png",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-    price: 20,
-    countInStock: 3,
-    rating: 4,
-    numReviews: 4,
-  },
-  {
     name: "Jif Creamy Peanut Butter ",
     image: "/images/butter5.png",
     description:
@@ -19,16 +9,7 @@ const products = [
     rating: 2,
     numReviews: 2,
   },
-  {
-    name: "Peanut Butter sea salt carmel (Vegan)",
-    image: "/images/butter4.png",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-    price: 22,
-    countInStock: 7,
-    rating: 2,
-    numReviews: 3,
-  },
+
   {
     name: "Reese's Creamy Peanut Butter ",
     image: "/images/butter3.png",
@@ -80,6 +61,16 @@ const products = [
     numReviews: 7,
   },
   {
+    name: "Peanut Butter sea salt carmel (Vegan)",
+    image: "/images/butter4.png",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    price: 22,
+    countInStock: 7,
+    rating: 2,
+    numReviews: 3,
+  },
+  {
     name: "Felix Peanut Butter Creamy",
     image: "/images/butter9.png",
     description:
@@ -118,6 +109,16 @@ const products = [
     countInStock: 6,
     rating: 4.5,
     numReviews: 1,
+  },
+  {
+    name: "M&M's Peanut Butter ",
+    image: "/images/butter6.png",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    price: 20,
+    countInStock: 3,
+    rating: 4,
+    numReviews: 4,
   },
 ];
 

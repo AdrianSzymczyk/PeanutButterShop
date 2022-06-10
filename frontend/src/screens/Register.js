@@ -35,7 +35,6 @@ const Register = ({ location, history }) => {
       <div className="container d-flex flex-column justify-content-center align-items-center login-center">
         {error && <Message variant="alter-danger">{error}</Message>}
         {loading && <Loading />}
-
         <form
           className="Login col-md-8 col-lg-4 col-11"
           onSubmit={submitHandler}
@@ -43,18 +42,24 @@ const Register = ({ location, history }) => {
           <input
             type="text"
             placeholder="Username"
+            required
+            minLength={5}
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="email"
             placeholder="Email"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="Password"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
