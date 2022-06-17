@@ -3,6 +3,7 @@ import asyncHandler from "express-async-handler";
 import protect from "../MIddleware/AuthMiddleware.js";
 import generateToken from "../utils/generateToken.js";
 import User from "./../Models/UserModel.js";
+import Order from "./../Models/OrderModel.js";
 
 const userRouter = express.Router();
 
@@ -109,6 +110,16 @@ userRouter.put(
       res.status(404);
       throw new Error("User not found!");
     }
+  })
+);
+
+// GET ALL USERS
+userRouter.get(
+  "/",
+  protect,
+  asyncHandler(async (req, res) => {
+    const users = await User.find({});
+    res.json(users);
   })
 );
 

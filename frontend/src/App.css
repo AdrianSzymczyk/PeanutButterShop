@@ -485,6 +485,9 @@ textarea:focus {
 .table-responsive {
   width: 100%;
 }
+.table-responsive1 {
+  width: 50%;
+}
 /* CART */
 .cart-iterm {
   margin: 40px 0;

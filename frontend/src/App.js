@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import "./responsive.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,8 +15,20 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import NotFound from "./screens/NotFound";
 import PrivateRouter from "./PrivateRouter";
+import OrdersScreen from "./screens/OrdersScreen";
+import { useDispatch, useSelector } from "react-redux";
+import { listOrders } from "./Redux/Actions/OrderActions";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  useEffect(() => {
+    if (userInfo) {
+      dispatch(listOrders());
+    }
+  }, [dispatch, userInfo]);
   return (
     <Router>
       <Switch>
@@ -28,6 +40,7 @@ const App = () => {
           component={HomeScreen}
           exact
         />
+        <Route path="/allorders" component={OrdersScreen} />
         <Route path="/products/:id" component={SingleProduct} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />

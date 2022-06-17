@@ -42,6 +42,28 @@ orderRouter.post(
   })
 );
 
+// GET ALL ORDERS
+orderRouter.get(
+  "/all",
+  protect,
+  asyncHandler(async (req, res) => {
+    const orders = await Order.find({})
+      .sort({ _id: -1 })
+      .populate("user", "id name email");
+    res.json(orders);
+  })
+);
+
+// USER LOGIN ORDERS
+orderRouter.get(
+  "/",
+  protect,
+  asyncHandler(async (req, res) => {
+    const order = await Order.find({ user: req.user._id }).sort({ _id: -1 });
+    res.json(order);
+  })
+);
+
 // GET ORDER BY ID
 orderRouter.get(
   "/:id",
@@ -58,16 +80,6 @@ orderRouter.get(
       res.status(404);
       throw new Error("Order Not Found!");
     }
-  })
-);
-
-// USER LOGIN ORDERS
-orderRouter.get(
-  "/",
-  protect,
-  asyncHandler(async (req, res) => {
-    const order = await Order.find({ user: req.user._id }).sort({ _id: -1 });
-    res.json(order);
   })
 );
 

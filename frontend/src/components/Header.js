@@ -25,6 +25,11 @@ const Header = () => {
       history.push("/");
     }
   };
+
+  const goToOrders = (e) => {
+    e.preventDefault();
+    history.push(`/allorders`);
+  };
   return (
     <div>
       {/* Top Header */}
@@ -51,6 +56,9 @@ const Header = () => {
               <Link to="">
                 <i className="fab fa-pinterest-p"></i>
               </Link>
+              <div onClick={goToOrders} className="">
+                <button type="button">Show All</button>
+              </div>
             </div>
           </div>
         </div>
